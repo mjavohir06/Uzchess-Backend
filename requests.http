@@ -1,0 +1,12 @@
+### GET request to example server
+GET http://localhost:8888/admin/author/abc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJzb2xpaGNvZGVyQGdtYWlsLmNvbSIsInJvbGUiOiJzdXBlckFkbWluIiwiaWF0IjoxNzc0NDM1MDAyLCJleHAiOjE3NzQ0NDU4MDJ9.drWzAP9SxH9QgqFVwsJ0xErr8HnXzZ4jGFFcKTdhf4E
+###
+
+POST http://localhost:8888/admin/author
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibG9naW4iOiJzb2xpaGNvZGVyQGdtYWlsLmNvbSIsInJvbGUiOiJzdXBlckFkbWluIiwiaWF0IjoxNzc0NDM1MDAyLCJleHAiOjE3NzQ0NDU4MDJ9.drWzAP9SxH9QgqFVwsJ0xErr8HnXzZ4jGFFcKTdhf4E
+Content-Type: application/json
+
+{
+  "fullName": "Kimdurjonbekxon"
+}
