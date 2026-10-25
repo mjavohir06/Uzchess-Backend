@@ -40,8 +40,8 @@ export class Book extends BaseModel {
   @Column({ length: 128 })
   title!: string;
 
-  @Column({ length: 128, nullable: true })
-  image?: string;
+  @Column({ length: 128})
+  image!: string;
 
   @Column({ type: 'text' })
   description!: string;

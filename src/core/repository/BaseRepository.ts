@@ -95,7 +95,7 @@ export abstract class BaseRepository<T extends Object> {
         const nextPage = currentPage < totalPages ? currentPage + 1 : null
 
 
-        const data = await this.repo.find({ take: take, skip, where: whereOptions ,relations:relations})
+        const data = await this.repo.find({ take: take, skip, where: whereOptions ,relations:relations,order:{}})
         return { totalPages, totalCount, currentPage, nextPage, data } as PaginatedResult
     }
 }

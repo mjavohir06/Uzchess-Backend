@@ -23,11 +23,11 @@ export class CourseLikePublicService {
     const like = await this.repo.findOneBy({ userId, courseId });
     if (like) {
       await this.repo.remove(like);
-      return { message: 'Removed' };
+      return false;
     } else {
       const newLike = { userId: user.id, courseId: courseId } as CourseLike;
       await this.repo.save(newLike);
-      return { message: 'Liked' };
+      return true;
     }
   }
 }

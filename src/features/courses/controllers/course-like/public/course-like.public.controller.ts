@@ -8,14 +8,16 @@ import { Role } from '@/core/enums/role.enum';
 @ApiTags('CourseLike - Public')
 @ApiBearerAuth()
 @Controller('public/course-like')
-@Roles(Role.User)
+@Roles(Role.User,Role.Admin,Role.SuperAdmin)
 export class CourseLikePublicController {
   constructor(private readonly service: CourseLikePublicService) {
   }
 
   @Post(':courseId')
   async toggleLike(@Req() request: Request, @Param('courseId', ParseIntPipe) id: number) {
+    console.log(request.user);
     // @ts-ignore
+    
     return await this.service.toggleLike(id, request.user.id);
   }
 }

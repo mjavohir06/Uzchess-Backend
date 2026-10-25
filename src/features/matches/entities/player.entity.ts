@@ -26,6 +26,9 @@ export class Player extends BaseModel {
   @Column({nullable: true})
   blitz?: number;
 
+  @Column()
+  date!:Date
+
   @OneToMany(() => Match, (match) => match.firstPlayer)
   matchesAsFirst?: Match[];
 

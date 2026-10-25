@@ -1,6 +1,6 @@
 import { IsInt, IsOptional, Min } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
 
 export class PaginationFilters {
   @IsInt()
@@ -8,12 +8,14 @@ export class PaginationFilters {
   @IsOptional()
   @ApiProperty({ required: false })
   @Type(() => Number)
-  page?: number;
+  @Transform(({ value }) => value ?? Number(process.env.DEFAULT_PAGE) ?? 1)
+  page!: number;
 
   @IsInt()
   @Min(1)
   @IsOptional()
   @ApiProperty({ required: false })
   @Type(() => Number)
-  size?: number;
+  @Transform(({ value }) => value ?? Number(process.env.DEFAULT_SIZE) ?? 20)
+  size!: number;
 }

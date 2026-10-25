@@ -3,9 +3,9 @@ import { ConfigService } from "@nestjs/config";
 import { Repository } from "typeorm";
 import { BaseRepository } from "@/core/repository/BaseRepository";
 import { InjectRepository } from "@nestjs/typeorm";
+import { User } from "@/features/authentication/entities/user.entity";
 import { CourseLike } from "../../entities/course-like.entity";
 import { Course } from "../../entities/course.entity";
-import { User } from "@/features/authentication/entities/user.entity";
 
 
 

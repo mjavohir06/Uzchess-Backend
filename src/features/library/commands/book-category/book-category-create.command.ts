@@ -7,4 +7,5 @@ export class BookCategoryCreateCommand extends Command<BookCategory>{
     constructor(public readonly payload:BookCategoryCreateDtoAdmin){
         super()
     }
+    
 }

@@ -24,11 +24,12 @@ import { Language } from '../common/entities/language.entity';
 import { Difficulty } from '../common/entities/difficulty.entity';
 import { Course } from './entities/course.entity';
 import { User } from '../authentication/entities/user.entity';
+import { CourseReview } from './entities/course-review.entity';
 
 
 @Module({
   imports:[
-    TypeOrmModule.forFeature([CourseCategory,Course,CourseLike,Author,Language,Difficulty,User])
+    TypeOrmModule.forFeature([CourseCategory,CourseReview,Course,CourseLike,Author,Language,Difficulty,User])
   ],
   providers: [
     CourseCategoryAdminService,

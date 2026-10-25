@@ -3,10 +3,11 @@ import { BookCategoryCreateDtoAdmin } from '../../dtos/book-category/admin/book-
 import { BookCategoryServiceAdmin } from '../../services/book-category/book-category.service.admin';
 import { BookCategoryUpdateDtoAdmin } from '../../dtos/book-category/admin/book-category.update.dto.admin';
 import { BookCategoryListDtoAdmin } from '../../dtos/book-category/admin/book-category.list.dto.admin';
-import { ApiBearerAuth, ApiCookieAuth, ApiOkResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiCookieAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { Roles } from '@/core/decorators/roles.decorator';
 import { Role } from '@/core/enums/role.enum';
 
+@ApiTags("BookCategory - Admin")
 @ApiCookieAuth()
 @Controller('admin/book-category')
 @Roles(Role.Admin, Role.SuperAdmin)
